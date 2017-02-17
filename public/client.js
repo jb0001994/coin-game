@@ -24,7 +24,7 @@
   }
 
   function drawPlayers(gameState) {
-    gameState.positions.forEach(([name, position]) => {
+    Object.entries(gameState.positions).forEach(([name, position]) => {
       fillCell(...position.split(','), name[0].toUpperCase(), 'white', '#60c');
     });
   }
@@ -50,6 +50,7 @@
   }
 
   function renderBoard(gameState) {
+    console.log(gameState);
     clearCanvas();
     drawCoins(gameState);
     drawPlayers(gameState);
